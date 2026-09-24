@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- Define a codificação dos caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Faz o site se adaptar ao tamanho da tela do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Nome que aparece na aba do navegador -->
+    <title>Regresso</title>
+
+    <!--
+        Aqui estamos conectando o HTML ao arquivo CSS.
+
+        O CSS ficará separado no arquivo:
+        style.css
+    -->
+    <link rel="stylesheet" href="./arquivo.css">
+
+</head>
+
+
+<body>
+
+    <!--
+        CONTAINER PRINCIPAL
+
+        Tudo que pertence ao aplicativo
+        ficará dentro dessa div.
+    -->
+    <main class="app">
+
+
+        <!-- =================================
+             MENU SUPERIOR
+        ================================== -->
+
+        <nav class="menu">
+
+            <button id="modoCronometro" class="modo" type="button">
+                ⏱ Cronômetro
+            </button>
+
+            <button id="modoContagem" class="modo active" type="button">
+                ⌛ Regresso
+            </button>
+
+        </nav>
+
+
+        <h1 id="tituloModo">
+            ⌛ Regresso
+        </h1>
+
+
+        <!-- =================================
+             CAMPOS DE TEMPO
+        ================================== -->
+
+        <section class="inputs">
+
+
+            <!-- CAMPO HORAS -->
+
+            <div class="campo">
+
+                <label for="horas">
+
+                    Horas
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="horas"
+                    value="0"
+                    min="0"
+                >
+
+            </div>
+
+
+            <!-- CAMPO MINUTOS -->
+
+            <div class="campo">
+
+                <label for="minutos">
+
+                    Minutos
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="minutos"
+                    value="2"
+                    min="0"
+                    max="59"
+                >
+
+            </div>
+
+
+            <!-- CAMPO SEGUNDOS -->
+
+            <div class="campo">
+
+                <label for="segundos">
+
+                    Segundos
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="segundos"
+                    value="0"
+                    min="0"
+                    max="59"
+                >
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================
+             RELÓGIO
+        ================================== -->
+
+        <section class="relogio">
+
+
+            <!--
+                Aqui o JavaScript vai alterar
+                o texto automaticamente.
+
+                Exemplo:
+
+                00:02:00
+                00:01:59
+                00:01:58
+            -->
+
+            <div id="tempo" class="tempo">
+
+                00:02:00
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================
+             BOTÕES
+        ================================== -->
+
+        <section class="botoes">
+
+
+            <!-- Botão iniciar -->
+
+            <button
+                id="btnIniciar"
+                class="iniciar"
+            >
+
+                ▶ Iniciar
+
+            </button>
+
+
+            <!-- Botão pausar -->
+
+            <button
+                id="btnPausar"
+                class="pausar"
+            >
+
+                ⏸ Pausar
+
+            </button>
+
+
+            <!-- Botão zerar -->
+
+            <button
+                id="btnZerar"
+                class="zerar"
+            >
+
+                ↻ Zerar
+
+            </button>
+
+
+        </section>
+
+
+        <!-- =================================
+             CONFIGURAÇÕES
+        ================================== -->
+
+        <button class="config">
+
+            ⚙ Configurações
+
+            <span>
+
+                ›
+
+            </span>
+
+        </button>
+
+
+    </main>
+
+
+    <!--
+        Conecta o HTML ao JavaScript.
+
+        É colocado no final do body para que
+        os elementos HTML já tenham sido
+        carregados quando o JavaScript executar.
+    -->
+
+    <script src="./scripts.js"></script>
+
+</body>
+
+</html>

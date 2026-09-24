@@ -1,0 +1,784 @@
+/* =========================================
+   RESET
+
+   Remove algumas configurações padrão
+   do navegador.
+========================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================
+   BODY
+
+   Configura o fundo da página.
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    /*
+        Fundo escuro + imagem egípcia.
+
+        A imagem deve estar em:
+
+        img/egito.jpg
+    */
+
+    background:
+
+        linear-gradient(
+            rgba(0, 15, 30, 0.88),
+            rgba(0, 10, 20, 0.94)
+        ),
+
+        url("./assets/egito.jpeg")
+
+        center / cover fixed;
+
+
+    /* Fonte principal */
+
+    font-family:
+
+        Arial,
+        Helvetica,
+        sans-serif;
+
+
+    /* Cor padrão dos textos */
+
+    color: white;
+
+
+    /* Centraliza o aplicativo */
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================
+   APLICATIVO
+========================================= */
+
+.app {
+
+    width: 100%;
+
+    /*
+        Impede que a interface fique
+        exageradamente larga em telas grandes.
+    */
+
+    max-width: 1000px;
+
+
+    min-height: 100vh;
+
+
+    padding: 25px;
+
+
+    /*
+        Organiza os elementos
+        verticalmente.
+    */
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu {
+
+    width: 100%;
+
+    max-width: 850px;
+
+
+    display: flex;
+
+
+    /*
+        Borda arredondada do menu.
+    */
+
+    border: 2px solid
+        rgba(0, 220, 255, 0.4);
+
+
+    border-radius: 60px;
+
+
+    padding: 5px;
+
+
+    /*
+        Fundo transparente.
+    */
+
+    background:
+        rgba(5, 20, 35, 0.75);
+
+
+    /*
+        Efeito de vidro.
+    */
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+/* =========================================
+   BOTÕES DO MENU
+========================================= */
+
+.menu button {
+
+    /*
+        Os dois botões dividem
+        igualmente o espaço.
+    */
+
+    flex: 1;
+
+
+    padding: 18px;
+
+
+    border: none;
+
+
+    border-radius: 50px;
+
+
+    background: transparent;
+
+
+    color: #9fc0d9;
+
+
+    font-size: 20px;
+
+
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+
+}
+
+
+/*
+    Quando o botão está selecionado.
+*/
+
+.menu button.active {
+
+    background: #00d9e8;
+
+
+    color: #06131d;
+
+
+    /*
+        Brilho azul.
+    */
+
+    box-shadow:
+
+        0 0 20px
+        rgba(0, 230, 255, 0.5);
+
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+h1 {
+
+    margin-top: 45px;
+
+    margin-bottom: 30px;
+
+
+    font-size:
+
+        clamp(
+            28px,
+            5vw,
+            48px
+        );
+
+
+    text-align: center;
+
+
+    /*
+        Brilho no texto.
+    */
+
+    text-shadow:
+
+        0 0 15px
+        rgba(0, 230, 255, 0.5);
+
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.inputs {
+
+    width: 100%;
+
+    max-width: 900px;
+
+
+    /*
+        Cria três colunas.
+    */
+
+    display: grid;
+
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            1fr
+        );
+
+
+    gap: 25px;
+
+}
+
+
+/* Cada campo */
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+/* Nome do campo */
+
+.campo label {
+
+    color: #9cc5df;
+
+
+    font-size: 17px;
+
+
+    font-weight: bold;
+
+
+    text-align: center;
+
+
+    text-transform: uppercase;
+
+}
+
+
+/* Caixa onde digitamos */
+
+.campo input {
+
+    width: 100%;
+
+
+    padding: 20px;
+
+
+    border-radius: 20px;
+
+
+    /*
+        Borda azul neon.
+    */
+
+    border: 2px solid #00d9e8;
+
+
+    background:
+        rgba(5, 25, 40, 0.85);
+
+
+    color: white;
+
+
+    font-size: 35px;
+
+
+    font-weight: bold;
+
+
+    text-align: center;
+
+
+    outline: none;
+
+}
+
+
+/*
+    Quando o usuário clica no input.
+*/
+
+.campo input:focus {
+
+    box-shadow:
+
+        0 0 20px
+        rgba(0, 230, 255, 0.5);
+
+}
+
+
+/* =========================================
+   RELÓGIO
+========================================= */
+
+.relogio {
+
+    /*
+        O tamanho será proporcional
+        à tela.
+    */
+
+    width: min(
+        80vw,
+        570px
+    );
+
+
+    aspect-ratio: 1;
+
+
+    margin: 35px 0;
+
+
+    /*
+        Deixa o elemento circular.
+    */
+
+    border-radius: 50%;
+
+
+    border: 10px solid #00e5f5;
+
+
+    /*
+        Imagem dentro do relógio.
+    */
+
+    background:
+
+        linear-gradient(
+            rgba(0, 10, 20, 0.20),
+            rgba(0, 10, 20, 0.20)
+        ),
+
+        url("./assets/egito.jpeg")
+
+        center / cover;
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    position: relative;
+
+
+    /*
+        Brilho ao redor do relógio.
+    */
+
+    box-shadow:
+
+        0 0 25px
+        rgba(0, 230, 255, 0.5),
+
+        inset 0 0 40px
+        rgba(0, 0, 0, 0.7);
+
+}
+
+
+/* =========================================
+   TEMPO
+========================================= */
+
+.tempo {
+
+    /*
+        Fundo escuro atrás do número.
+
+        Isso facilita a leitura.
+    */
+
+    background:
+        rgba(0, 10, 20, 0.88);
+
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.5);
+
+
+    border-radius: 30px;
+
+
+    padding: 20px 35px;
+
+
+    /*
+        O tamanho se adapta à tela.
+    */
+
+    font-size:
+
+        clamp(
+            35px,
+            8vw,
+            80px
+        );
+
+
+    font-weight: bold;
+
+
+    letter-spacing: 3px;
+
+
+    /*
+        Não deixa o horário quebrar
+        em duas linhas.
+    */
+
+    white-space: nowrap;
+
+
+    box-shadow:
+
+        0 0 20px
+        rgba(0, 0, 0, 0.6);
+
+}
+
+
+/* =========================================
+   BOTÕES PRINCIPAIS
+========================================= */
+
+.botoes {
+
+    width: 100%;
+
+    max-width: 900px;
+
+
+    display: grid;
+
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            1fr
+        );
+
+
+    gap: 25px;
+
+}
+
+
+/* Estilo geral dos botões */
+
+.botoes button {
+
+    border: none;
+
+
+    padding: 20px;
+
+
+    border-radius: 50px;
+
+
+    color: white;
+
+
+    font-size: 22px;
+
+
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    transition: 0.2s;
+
+
+    box-shadow:
+
+        0 5px 15px
+        rgba(0, 0, 0, 0.4);
+
+}
+
+
+/*
+    Efeito quando passa o mouse.
+*/
+
+.botoes button:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/*
+    Efeito ao clicar.
+*/
+
+.botoes button:active {
+
+    transform:
+        scale(0.96);
+
+}
+
+
+/* Botão iniciar */
+
+.iniciar {
+
+    background: #08d66d;
+
+}
+
+
+/* Botão pausar */
+
+.pausar {
+
+    background: #ff9d00;
+
+}
+
+
+/* Botão zerar */
+
+.zerar {
+
+    background: #ed3c46;
+
+}
+
+
+/* =========================================
+   CONFIGURAÇÕES
+========================================= */
+
+.config {
+
+    width: 100%;
+
+    max-width: 900px;
+
+
+    margin-top: 30px;
+
+
+    padding: 20px 25px;
+
+
+    border-radius: 25px;
+
+
+    border:
+        2px solid
+        rgba(0, 210, 255, 0.6);
+
+
+    background:
+        rgba(5, 20, 35, 0.7);
+
+
+    color: white;
+
+
+    font-size: 20px;
+
+
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    text-align: left;
+
+}
+
+
+/*
+    Coloca a seta no lado direito.
+*/
+
+.config span {
+
+    float: right;
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+
+   Essas regras são usadas quando
+   a tela tiver até 650px.
+========================================= */
+
+@media (max-width: 650px) {
+
+
+    .app {
+
+        padding: 10px;
+
+    }
+
+
+    h1 {
+
+        margin-top: 25px;
+
+        margin-bottom: 18px;
+
+        font-size: 28px;
+
+    }
+
+
+    /* Diminui o menu */
+    .menu button {
+
+        font-size: 12px;
+
+        padding: 11px 5px;
+
+    }
+
+
+    /* Diminui o espaço dos campos */
+
+    .inputs {
+
+        gap: 8px;
+
+    }
+
+
+    .campo label {
+
+        font-size: 12px;
+
+    }
+
+
+    .campo input {
+
+        padding: 10px 3px;
+
+        font-size: 21px;
+
+    }
+
+
+    /* Relógio ocupa mais espaço no celular */
+
+    .relogio {
+
+        width: 72vw;
+
+        margin: 22px 0;
+
+        border-width: 5px;
+
+    }
+
+
+    .tempo {
+
+        padding: 10px 13px;
+
+        font-size: 8vw;
+
+    }
+
+
+    /* Botões ficam menores */
+
+    .botoes {
+
+        gap: 8px;
+
+    }
+
+
+    .botoes button {
+
+        padding: 11px 3px;
+
+        font-size: 13px;
+
+    }
+
+}
